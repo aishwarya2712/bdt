@@ -1,0 +1,21 @@
+head(airquality)
+df<-data.frame(airquality)
+dimension<-dim(airquality)
+print(dimension)
+
+sapply(df,class)
+
+xcol<-colnames(df)
+np<-colSums(is.na(df))
+print(np)
+
+which(is.na(df))
+sum(is.na(df))
+
+df1<-as.data.frame(df)
+
+for(i in 1:dimension[2])
+  df1[,i]<-ifelse(is.na(df[,i]),mean(df[,i],na.rm=TRUE),df[,i])
+df2<-na.omit(df)
+print(df2)
+
