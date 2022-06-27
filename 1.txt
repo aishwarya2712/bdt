@@ -1,0 +1,29 @@
+n<-as.integer(readline(prompt="Enter the no of students:"))
+usn<-vector(mode="character", length=n)
+name<-vector(mode="character", length=n)
+marks<-vector(mode="numeric", length=n)
+print("enter usn")
+for(i in 1:n)
+  usn[i]=as.character(readline())
+print("enter name")
+for(i in 1:n)
+  name[i]=as.character(readline())
+print("enter marks")
+for(i in 1:n)
+  marks[i]=as.integer(readline())
+student<-data.frame(usn,name,marks)
+print("student lab")
+print(student)
+
+age<-vector(mode="numeric", length=n)
+print("enter age:")
+for(i in 1:n)
+  age[i]=as.integer(readline())
+student<-cbind(student,age)
+
+for(i in 1:n){
+  if(age[i]<20 && marks[i]>25)
+    {
+    print(name[i])
+    }
+}

@@ -1,0 +1,31 @@
+n<-as.integer(readline(prompt="Enter the no of employees"))
+empid<-vector(mode="numeric",length = n)
+empname<-vector(mode="character",length = n)
+DOJ<-vector(mode="character",length = n)
+dept<-vector(mode="character",length = n)
+designation<-vector(mode="character",length = n)
+
+
+print("Enter employ id")
+for(i in 1:n)
+  empid[i] = as.numeric(readline())
+print("Enter employ name")
+for(i in 1:n)
+  empname[i] = as.character(readline())
+print("Enter date of joining")
+for(i in 1:n)
+  DOJ[i] = as.character(readline())
+print("Enter departrment")
+for(i in 1:n)
+  dept[i] = as.character(readline())
+print("Enter designation")
+for(i in 1:n)
+  designation[i] = as.character(readline())
+
+Employee=data.frame(empid,empname,DOJ,dept,designation)
+print(Employee)
+
+write.csv(Employee,file="emp.csv")
+
+m=read.csv(file="emp.csv")
+print(m)
